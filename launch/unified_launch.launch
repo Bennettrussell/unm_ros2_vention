@@ -1,0 +1,54 @@
+# reset_and_velocity_mode.launch.py
+import launch
+from launch import LaunchDescription
+from launch.actions import ExecuteProcess, RegisterEventHandler
+from launch.event_handlers import OnProcessExit
+from launch_ros.actions import Node
+
+def generate_launch_description():
+    # Step 1: Launch the node
+    node_action = Node(
+        package='vention_control',
+        executable='vention_node',
+        name='carriage1',
+        namespace='vention',
+        output='screen',
+        arguments=[
+            '--node_name', 'carriage1',
+            '--vention_ip', '192.168.7.2'
+        ]
+    )
+
+    # Step 2: Call reset service
+    reset_call = ExecuteProcess(
+        cmd=[
+            'ros2', 'service', 'call',
+            '/vention/error_reset',
+            'std_srvs/srv/Trigger'
+        ],
+        output='screen'
+    )
+
+    # Step 3: Call velocity_servo after reset_call finishes
+    velocity_call = ExecuteProcess(
+        cmd=[
+            'ros2', 'service', 'call',
+            '/vention/velocity_servo',
+            'std_srvs/srv/Trigger'
+        ],
+        output='screen'
+    )
+
+    # This event handler triggers velocity_call after reset_call exits
+    velocity_after_reset = RegisterEventHandler(
+        OnProcessExit(
+            target_action=reset_call,
+            on_exit=[velocity_call],
+        )
+    )
+
+    return LaunchDescription([
+        node_action,
+        reset_call,
+        velocity_after_reset
+    ])
