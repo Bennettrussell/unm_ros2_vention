@@ -1,37 +1,38 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>vention_control</name>
-  <version>0.0.1</version>
-  <description>ROS 2 version of the Vention Control Package</description>
-
-  <maintainer email="medusar@todo.todo">medusar</maintainer>
-  <license>Apache-2.0</license>
-  
-  <!-- Build tools (for ament / Python in ROS 2) -->
-  <buildtool_depend>ament_cmake</buildtool_depend>
-  <buildtool_depend>ament_cmake_python</buildtool_depend>
-
-  <!-- Core dependencies for building messages/services -->
-  <depend>rosidl_default_generators</depend>
-  <depend>rosidl_default_runtime</depend>
-
-  <!-- Python-based ROS 2 client library -->
-  <depend>rclpy</depend>
-
-  <!-- Standard messages & services you use -->
-  <depend>std_msgs</depend>
-  <depend>geometry_msgs</depend>
-  <depend>sensor_msgs</depend>
-  <depend>std_srvs</depend>
-
-  <!-- (Optional) Additional dependencies for runtime if needed:
-       <exec_depend>roboticstoolbox-python</exec_depend>
-       <exec_depend>MachineMotion</exec_depend>
-       etc.
+  <!--
+    This package.xml defines the unm_ros2_vention package for controlling
+    a Vention MachineMotion v2 (or v2OneDrive) using ROS 2.
+    
+    It includes Python nodes that depend on rclpy, std_msgs, and
+    (optionally) paho-mqtt for MQTT communication. 
   -->
+  
+  <name>unm_ros2_vention</name>
+  <version>0.0.1</version>
+  <description>
+    ROS 2 package containing nodes and wrappers for controlling
+    Vention MachineMotion v2 hardware.
+  </description>
 
+  <!-- Author / Maintainer Info -->
+  <maintainer email="bennettrussell@unm.edu">Bennett Russell</maintainer>
+  <!-- Add more maintainers if needed -->
+
+  <!-- Build system dependencies -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- Build / Execution Dependencies -->
+  <build_depend>rclpy</build_depend>
+  <exec_depend>rclpy</exec_depend>
+
+  <!-- If you use standard message types: -->
+  <build_depend>std_msgs</build_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+  <!-- Export section for ament -->
   <export>
-    <!-- Indicate this is an ament-cmake package -->
     <build_type>ament_cmake</build_type>
   </export>
 </package>
