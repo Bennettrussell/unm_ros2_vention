@@ -18,10 +18,10 @@ ament_python_install_package(${PROJECT_NAME})
 
 install(
   PROGRAMS
-    unm_ros2_vention/vention_node.py
-    unm_ros2_vention/vention_reset.py
-    unm_ros2_vention/vention_api_wrapper.py
-    unm_ros2_vention/MachineMotion.py
+    scripts/vention_node.py
+    scripts/vention_reset.py
+    scripts/vention_api_wrapper.py
+    scripts/MachineMotion.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
