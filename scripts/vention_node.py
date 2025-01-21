@@ -5,7 +5,7 @@ from rclpy.node import Node
 
 from std_msgs.msg import Float32, String, Int32MultiArray, Bool
 
-# Import your completed wrapper
+
 from vention_api_wrapper import (
     VentionController,
     MECH_GAIN,
