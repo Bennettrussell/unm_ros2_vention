@@ -1,5 +1,5 @@
 
-This ROS 2 package contains everything you need to control a **Vention MachineMotion v2** (or v2OneDrive) system, optionally alongside a UR5e. 
+This ROS 2 package contains everything you need to control a **Vention MachineMotion v2** (or v2OneDrive) system.
 Right now it is only configured for use with Drive_1 and Drive_3; however this is easily modified.
 The package includes:
 
