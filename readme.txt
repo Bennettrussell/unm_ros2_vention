@@ -36,8 +36,8 @@ unm_ros2_vention/
     ros2 pkg list | grep unm_ros2_vention
 
 ## Key Components 
-1
-. MachineMotion.py
+
+1. MachineMotion.py
 
     A library from Vention that connects via MQTT/HTTP to MachineMotion v2 hardware.
     Contains the lower-level classes and logic (e.g. GCode, enumerations, etc.). must be sourced from VentionCo's github
@@ -65,7 +65,7 @@ unm_ros2_vention/
 direct:
     ros2 run unm_ros2_vention vention_node
 Via launch file:
-    ros2 launch unm_ros2_vention vention_node.launch
+    ros2 launch unm_ros2_vention unified_launch.launch.py
 
 ## Subscribers
 Positions:
