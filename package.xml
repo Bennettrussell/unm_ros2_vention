@@ -8,7 +8,7 @@
     (optionally) paho-mqtt for MQTT communication. 
   -->
   
-  <name>unm_ros2_vention</name>
+  <name>scripts</name>
   <version>0.0.1</version>
   <description>
     ROS 2 package containing nodes and wrappers for controlling

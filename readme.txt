@@ -63,7 +63,7 @@ unm_ros2_vention/
 
 ## Launch methods
 direct:
-    ros2 run unm_ros2_vention vention_node
+    ros2 run scripts vention_node.py
 Via launch file:
     ros2 launch unm_ros2_vention unified_launch.launch.py
 
