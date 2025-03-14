@@ -1,12 +1,12 @@
 
-This ROS 2 package contains everything you need to control a **Vention MachineMotion v2** (or v2OneDrive) system.
+This ROS 2 package contains everything you need to control a Vention MachineMotion v2 (or v2OneDrive) system.
 Right now it is only configured for use with Drive_1 and Drive_3; however this is easily modified.
 The package includes:
 
 1. vention_command.py which is a simple control loop that does not need to be built with the ROS2 node
-2. A **high-level Python wrapper** (`vention_api_wrapper.py`) providing the `VentionController` class.
-3. A **ROS 2 node** (`vention_node.py`) that exposes standard topics for velocity, position, e-stop, brakes, etc.
-4. An **optional ephemeral reset node** (`vention_reset.py`) to ensure e-stop is cleared on startup.
+2. A high-level Python wrapper (`vention_api_wrapper.py`) providing the `VentionController` class.
+3. A ROS 2 node (`vention_node.py`) that exposes standard topics for velocity, position, e-stop, brakes, etc.
+4. An optional ephemeral reset node (`vention_reset.py`) to ensure e-stop is cleared on startup.
 
 ---
 
