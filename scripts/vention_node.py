@@ -448,7 +448,7 @@ class VentionNode(Node):
         Periodically re-apply velocity commands for drives #2 & #3
         and publish positions (if enabled).
         """
-        # 1. Drive #2 velocity
+        # 1. Drive #1 velocity
         if self.use_drive_1:
             try:
                 if abs(self.vel_drive_1) > 1e-6:
@@ -470,13 +470,13 @@ class VentionNode(Node):
 
         # 3. Publish positions (if enabled)
         if self.publish_position:
-            # Drive #2 pos
+            # Drive #1 pos
             if self.use_drive_1:
                 try:
-                    pos_2 = self.vention.get_position(2)
-                    msg_2 = Float32()
-                    msg_2.data = float(pos_2)
-                    self.pub_drive_1_pos.publish(msg_2)
+                    pos_1 = self.vention.get_position(1)
+                    msg_1 = Float32()
+                    msg_1.data = float(pos_1)
+                    self.pub_drive_1_pos.publish(msg_1)
                 except Exception as e:
                     self.get_logger().error(f"[Drive1] get_position error: {e}")
             # Drive #3 pos

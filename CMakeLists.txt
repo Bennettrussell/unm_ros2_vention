@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(unm_ros2_vention)
+project(scripts)
 
 # -- 1) Find the required CMake/ROS 2 dependencies
 find_package(ament_cmake REQUIRED)

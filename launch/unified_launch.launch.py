@@ -18,7 +18,7 @@ def generate_launch_description():
 
     # 1) Node that attempts to release e-stop and reset system
     reset_node = Node(
-        package='unm_ros2_vention',
+        package='scripts',
         executable='vention_reset.py',
         name='vention_reset_node',
         output='screen',
@@ -28,7 +28,7 @@ def generate_launch_description():
 
     # 2) Main Vention node. We'll start it AFTER reset node finishes
     vention_node = Node(
-        package='unm_ros2_vention',
+        package='scripts',
         executable='vention_node.py',
         name='vention_node',
         output='screen',

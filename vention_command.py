@@ -17,15 +17,15 @@ class VentionControlLoop(Node):
         super().__init__('vention_control_loop')
         
         # Declare a parameter for the target position
-        self.declare_parameter('target_position', 100.0)  # default 100 mm
+        self.declare_parameter('target_position', 620.0)  # tape at 620mm start at 3350mm
         # A simple P-control gain
-        self.declare_parameter('p_gain', 0.5)            # mm/s per mm of error
+        self.declare_parameter('p_gain', 0.7)            # mm/s per mm of error
         # Maximum velocity limit
-        self.declare_parameter('max_vel', 100.0)         # mm/s
+        self.declare_parameter('max_vel', 225.0)         # mm/s
         # Tolerance for stopping
-        self.declare_parameter('tolerance', 2.0)         # mm
+        self.declare_parameter('tolerance', 0.2)         # mm
         # Rate for the control loop
-        self.declare_parameter('control_rate', 5.0)      # Hz (updates per second)
+        self.declare_parameter('control_rate', 30.0)      # Hz (updates per second)
 
         self.target_position = self.get_parameter('target_position').value
         self.p_gain          = self.get_parameter('p_gain').value
